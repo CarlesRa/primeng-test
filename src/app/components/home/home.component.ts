@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
 
   save(): void {
     showToast$.next({
-      type: 'success',
-      message: 'Guardado correctamente'
+      severity: 'success',
+      detail: 'Guardado correctamente'
     });
   }
 

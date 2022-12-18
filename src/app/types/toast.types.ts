@@ -1,2 +1,2 @@
-export type ToastPosition = 'tl' | 'tc' | 'tr' | 'bl' | 'bc' | 'br';
-export type ToastType = 'success' | 'info' | 'warn' | 'error';
+export type ToastKey = 'tl' | 'tc' | 'tr' | 'bl' | 'bc' | 'br';
+export type ToastSeverity = 'success' | 'info' | 'warn' | 'error';

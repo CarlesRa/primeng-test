@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Subject, Subscription } from 'rxjs';
 import { IToast } from 'src/app/interfaces/toast.interface';
-import { ToastPosition } from 'src/app/types/toast.types';
+import { ToastKey } from 'src/app/types/toast.types';
 
 export const showToast$: Subject<IToast> = new Subject();
 
@@ -15,7 +15,7 @@ export const showToast$: Subject<IToast> = new Subject();
 export class ToastComponent implements OnInit, OnDestroy {
 
   loading = true;
-  @Input() position: ToastPosition = 'tr';
+  @Input() position: ToastKey = 'tr';
   subscription!: Subscription;
 
   constructor(
@@ -39,11 +39,11 @@ export class ToastComponent implements OnInit, OnDestroy {
   }
 
   show(iToast: IToast): void {
-    this.position = iToast.position ?? 'tr';
+    this.position = iToast.key ?? 'tr';
     this.messageService.add({
-      key: iToast.position ?? 'tr',
-      severity: iToast.type,
-      detail: iToast.message,
+      key: iToast.key ?? 'tr',
+      severity: iToast.severity,
+      detail: iToast.detail,
     });
   }
 

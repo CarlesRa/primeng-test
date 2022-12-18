@@ -1,7 +1,7 @@
-import { ToastPosition, ToastType } from "../types/toast.types";
+import { ToastKey, ToastSeverity } from "../types/toast.types";
 
 export interface IToast {
-    position?: ToastPosition;
-    message: string;
-    type: ToastType
+    key?: ToastKey;
+    severity: ToastSeverity
+    detail: string;
 }
