@@ -1,0 +1,13 @@
+<ng-container *ngIf="!loading">
+    <ng-container [ngSwitch]="position">
+        <ng-container *ngSwitchCase="'tl'">
+            <p-toast position="top-left" key="tl"></p-toast>
+        </ng-container>
+        <ng-container *ngSwitchCase="'tc'">
+            <p-toast position="top-center" key="tc"></p-toast>
+        </ng-container>
+        <ng-container *ngSwitchCase="'tr'">
+            <p-toast position="top-right" key="tr"></p-toast>
+        </ng-container>
+    </ng-container>
+</ng-container>

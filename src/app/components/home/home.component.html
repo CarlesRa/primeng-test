@@ -1,0 +1,20 @@
+<ng-container *ngIf="!loading">
+  <div>
+    <p-button label="check/uncheck" (click)="checkUncheck()"></p-button>
+    <p-button label="save" (click)="save()" class="ml-2"></p-button>
+  </div>
+  <form [formGroup]="form">
+    <div class="p-fluid grid mt-2">
+      <div class="field col-12 md:col-2" style="margin-top: 38px;">
+        <p-checkbox formControlName="check" [binary]="true" label="Checkeame"></p-checkbox>
+      </div>
+      <span class="col-fixed">
+        <span class="field-label">Nombre*</span>
+        <input class="mt-2" formControlName="name" id="text" type="text" pInputText />
+        <small *ngIf="name.invalid && name.touched" id="username2-help" class="p-error block">Campo
+          requerido</small>
+      </span>
+    </div>
+  </form>
+</ng-container>
+<app-toast position="tr"></app-toast>
